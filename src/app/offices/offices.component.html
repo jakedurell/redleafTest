@@ -525,8 +525,9 @@
         <!-- ### $App Screen Content ### -->
         <main class='main-content bgc-grey-100'>
           <div id='mainContent'>
-              <div class="grid-wrapper">
-                  <kendo-grid
+              <!-- <div class="grid-wrapper"> -->
+
+                  <!-- <kendo-grid
                      [data]="view | async"
                      [pageSize]="state.take"
                      [skip]="state.skip"
@@ -536,15 +537,14 @@
                      [scrollable]="'none'"
                      (dataStateChange)="dataStateChange($event)"
                    >
-                   <kendo-grid-column field="CategoryID" width="100"></kendo-grid-column>
-                   <kendo-grid-column field="CategoryName" width="200"></kendo-grid-column>
-                   <kendo-grid-column field="Description" [sortable]="false">
+                   <kendo-grid-column field="name" width="100"></kendo-grid-column>
+                   <kendo-grid-column field="location" width="200"></kendo-grid-column>
+                   <kendo-grid-column field="total_sales_ytd" [sortable]="false">
                    </kendo-grid-column>
-                 </kendo-grid>
-                 <div *ngIf="view.loading" class="k-i-loading"></div>
-                 </div>
+                 </kendo-grid> -->
 
-            </div>
+                 <!-- <div *ngIf="view.loading" class="k-i-loading"></div> -->
+        
           </div>
         </main>
 

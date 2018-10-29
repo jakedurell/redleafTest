@@ -1,6 +1,6 @@
+import { IOffice } from './../models/office';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { IOffice } from '../models/office';
+// import { Observable, of } from 'rxjs';
 import { MockOffices } from '../mock-data/offices';
 
 @Injectable({
@@ -10,7 +10,9 @@ export class DataStoreService {
 
   constructor() { }
 
-  public getOffices(): Observable<IOffice[]> {
-    return of(MockOffices);
+  private offices: IOffice[] = MockOffices;
+
+  getOffices() {
+    return this.offices;
   }
 }

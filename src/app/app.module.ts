@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { OfficesComponent } from './offices/offices.component';
+// import { GridModule } from '@progress/kendo-angular-grid';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { OfficesComponent } from './offices/offices.component';
     BrowserModule,
     InputsModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // GridModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,11 +1,13 @@
-import { MockOffices } from './../mock-data/offices';
+import { IOffice } from './../models/office';
+// import { MockOffices } from './../mock-data/offices';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { State } from '@progress/kendo-data-query';
-import {
-    GridDataResult,
-    DataStateChangeEvent
-} from '@progress/kendo-angular-grid';
+// import { Observable } from 'rxjs/Observable';
+// import { State } from '@progress/kendo-data-query';
+// import {
+//     GridDataResult,
+//     // DataStateChangeEvent
+// } from '@progress/kendo-angular-grid';
+import { DataStoreService } from '../services/data-store.service';
 
 
 @Component ({
@@ -15,11 +17,14 @@ import {
 })
 export class OfficesComponent implements OnInit {
 
-  public view: Observable<GridDataResult>;
-  public state: State = {
-      skip: 0,
-      take: 5
-  };
+  view: IOffice[];
+
+  constructor(private dataService: DataStoreService) { }
+
+  // public state: State = {
+  //     skip: 0,
+  //     take: 5
+  // };
 
   // constructor(private service: MockOffices) {
   //     this.view = service;
@@ -32,6 +37,7 @@ export class OfficesComponent implements OnInit {
   // }
 
   ngOnInit() {
-    console.log(MockOffices);
+    this.view = this.dataService.getOffices();
+    console.log(this.view);
   }
 }
