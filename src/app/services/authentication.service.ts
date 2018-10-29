@@ -12,8 +12,8 @@ export class AuthenticationService {
   constructor() { }
 
   login(email: string, password: string): Observable<IUser> {
-    const match = MockUsers.find(m => m.email == email && m.password == password) || undefined;
+    const match = MockUsers.find(m => m.email === email && m.password === password) || undefined;
     this.authenticated$.next(match);
-    return of(match)
+    return of(match);
   }
 }
