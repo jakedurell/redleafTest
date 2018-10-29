@@ -544,7 +544,19 @@
                  </kendo-grid> -->
 
                  <!-- <div *ngIf="view.loading" class="k-i-loading"></div> -->
-        
+                 <table>
+                    <tr>
+                      <th *ngFor="let col of columns">
+                        {{col}}
+                      </th>
+                    </tr>
+                    <tr *ngFor="let office of view; let i = index">
+                      <td *ngFor="let col of columns">
+                        {{office.name}}
+                      </td>
+
+                    </tr>
+                  </table>
           </div>
         </main>
 

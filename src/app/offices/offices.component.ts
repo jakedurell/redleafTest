@@ -19,6 +19,8 @@ export class OfficesComponent implements OnInit {
 
   view: IOffice[];
 
+  columns: Array<string> = ['#', 'Name', 'Location', 'YTD Sales'];
+
   constructor(private dataService: DataStoreService) { }
 
   // public state: State = {
